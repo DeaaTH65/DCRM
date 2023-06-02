@@ -4,7 +4,22 @@
 
     {% if user.is_authenticated %}
 
-        <h1> Hello {{ user }} ! </h1>
+      <h1> Records... </h1>
+
+      {% if records %}
+        {% for record in records %}
+          {{ record.id }}
+          {{ record.first_name }}
+          {{ record.last_name }}
+          {{ record.phone }} 
+          {{ record.email }}
+          {{ record.address }}
+          {{ record.city }}
+          {{ record.zip_code }}
+          {{ record.created_at }}
+          <br/><br/>
+        {% endfor %}
+      {% endif %}
 
     {% else %}
 
